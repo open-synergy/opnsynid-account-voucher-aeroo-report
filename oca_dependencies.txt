@@ -13,3 +13,5 @@
 #
 # To provide both the URL and a branch, use:
 aeroo_reports https://github.com/aeroo/aeroo_reports 8.0
+opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools 8.0
+opnsynid-account-voucher https://github.com/open-synergy/opnsynid-account-voucher 8.0
