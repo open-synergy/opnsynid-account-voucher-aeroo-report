@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+<data noupdate="1">
+    <!-- Aeroo Report -->
+    <!-- cheque Payment No Header -->
+    <record
+            id="report_account_voucher_cheque_payment_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cheque Payment No Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cheque_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cheque_payment_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_cheque_aeroo_report/reports/parser_account_voucher_cheque.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_cheque_aeroo_report/reports/account_voucher_cheque_payment_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- cheque Payment With Header -->
+    <record
+            id="report_account_voucher_cheque_payment_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cheque Payment Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cheque_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cheque_payment_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_cheque_aeroo_report/reports/parser_account_voucher_cheque.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_cheque_aeroo_report/reports/account_voucher_cheque_payment_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- cheque Receipt No Header -->
+    <record
+            id="report_account_voucher_cheque_receipt_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cheque Receipt No Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cheque_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cheque_receipt_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_cheque_aeroo_report/reports/parser_account_voucher_cheque.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_cheque_aeroo_report/reports/account_voucher_cheque_receipt_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- cheque Receipt With Header -->
+    <record
+            id="report_account_voucher_cheque_receipt_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cheque Receipt Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cheque_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cheque_receipt_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_cheque_aeroo_report/reports/parser_account_voucher_cheque.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_cheque_aeroo_report/reports/account_voucher_cheque_receipt_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+
+    <!-- Print Policy -->
+    <!-- cheque Payment No Header -->
+    <record
+            id="print_policy_account_voucher_cheque_payment_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cheque Payment No Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cheque_payment_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- cheque Payment With Header -->
+    <record
+            id="print_policy_account_voucher_cheque_payment_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cheque Payment Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cheque_payment_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- cheque Receipt No Header -->
+    <record
+            id="print_policy_account_voucher_cheque_receipt_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cheque Receipt No Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cheque_receipt_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- cheque Receipt With Header -->
+    <record
+            id="print_policy_account_voucher_cheque_receipt_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cheque Receipt Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cheque_receipt_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+
+</data>
+</openerp>
