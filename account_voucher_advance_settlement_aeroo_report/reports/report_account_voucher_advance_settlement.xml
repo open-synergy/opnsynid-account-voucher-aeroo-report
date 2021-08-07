@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+<data noupdate="1">
+    <!-- Aeroo Report -->
+    <!-- Sale advance Settlement No Header -->
+    <record
+            id="report_sale_advance_settlement_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Sale Advance Settlement No Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.sale_advance_settlement</field>
+        <field
+                name="report_name"
+            >report_sale_advance_settlement_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_advance_settlement_aeroo_report/reports/parser_account_voucher_advance_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_advance_settlement_aeroo_report/reports/sale_advance_settlement_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Sale advance Settlement With Header -->
+    <record
+            id="report_sale_advance_settlement_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Sale Advance Settlement Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.sale_advance_settlement</field>
+        <field
+                name="report_name"
+            >report_sale_advance_settlement_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_advance_settlement_aeroo_report/reports/parser_account_voucher_advance_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_advance_settlement_aeroo_report/reports/sale_advance_settlement_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Purchase advance Settlement No Header -->
+    <record
+            id="report_purchase_advance_settlement_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Purchase Advance Settlement No Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.purchase_advance_settlement</field>
+        <field
+                name="report_name"
+            >report_purchase_advance_settlement_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_advance_settlement_aeroo_report/reports/parser_account_voucher_advance_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_advance_settlement_aeroo_report/reports/purchase_advance_settlement_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Purchase advance Settlement With Header -->
+    <record
+            id="report_purchase_advance_settlement_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Purchase Advance Settlement Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.purchase_advance_settlement</field>
+        <field
+                name="report_name"
+            >report_purchase_advance_settlement_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_advance_settlement_aeroo_report/reports/parser_account_voucher_advance_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_advance_settlement_aeroo_report/reports/purchase_advance_settlement_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+
+    <!-- Print Policy -->
+    <!-- Sale advance Settlement No Header -->
+    <record
+            id="print_policy_sale_advance_settlement_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Sale Advance Settlement No Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_sale_advance_settlement_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Sale advance Settlement With Header -->
+    <record
+            id="print_policy_sale_advance_settlement_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Sale Advance Settlement Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_sale_advance_settlement_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Purchase advance Settlement No Header -->
+    <record
+            id="print_policy_purchase_advance_settlement_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Purchase Advance Settlement No Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_purchase_advance_settlement_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Purchase advance Settlement With Header -->
+    <record
+            id="print_policy_purchase_advance_settlement_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Purchase Advance Settlement Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_purchase_advance_settlement_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+
+</data>
+</openerp>
