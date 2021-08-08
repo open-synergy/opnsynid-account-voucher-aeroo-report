@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+<data noupdate="1">
+    <!-- Aeroo Report -->
+    <!-- invoice Settlement No Header -->
+    <record
+            id="report_invoice_settlement_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Invoice Settlement No Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.invoice_settlement</field>
+        <field name="report_name">report_invoice_settlement_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_invoice_settlement_aeroo_report/reports/parser_account_voucher_invoice_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_invoice_settlement_aeroo_report/reports/invoice_settlement_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Invoice Settlement With Header -->
+    <record
+            id="report_invoice_settlement_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Invoice Settlement Header A4 ODT PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.invoice_settlement</field>
+        <field
+                name="report_name"
+            >report_invoice_settlement_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_invoice_settlement_aeroo_report/reports/parser_account_voucher_invoice_settlement.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_invoice_settlement_aeroo_report/reports/invoice_settlement_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+
+    <!-- Print Policy -->
+    <!-- Invoice Settlement No Header -->
+    <record
+            id="print_policy_invoice_settlement_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Invoice Settlement No Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_invoice_settlement_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Invoice Settlement With Header -->
+    <record
+            id="print_policy_invoice_settlement_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Invoice Settlement Header A4 ODT PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_invoice_settlement_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+
+</data>
+</openerp>
